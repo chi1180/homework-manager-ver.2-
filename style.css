@@ -1,0 +1,544 @@
+:root {
+    --base-fc: #202023;
+    --nav-bg: #eaeaea;
+    --header-bg: #d9d9d9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: serif;
+    color: var(--base-fc);
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    list-style: none;
+}
+
+body {
+    width: 100%;
+    height: 400vh;
+    position: relative;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    width: 45px;
+    height: calc(100vh - 100px);
+    padding-top: 100px;
+    padding-left: 10px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: var(--nav-bg);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    z-index: 2;
+}
+
+.show-all {
+    width: 250px;
+}
+
+nav a {
+    display: block;
+    width: calc(100% - 29px);
+    padding: 5px 10px;
+    margin: 25px 0;
+    background-color: white;
+    color: var(--header-bg);
+    border-radius: 36px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.show-all a {
+    display: block;
+}
+
+.active {
+    color: var(--base-fc);
+}
+
+.active::before {
+    color: var(--base-fc);
+}
+
+nav a::before {
+    content: "M";
+    width: 37px;
+    height: 37px;
+    border-radius: 37px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    background-color: var(--header-bg);
+}
+
+nav :nth-of-type(2)::before {
+    content: "C";
+}
+
+nav :nth-of-type(3)::before {
+    content: "H";
+}
+
+nav :nth-of-type(4)::before {
+    content: "S";
+}
+
+section {
+    width: calc(100% - 59px);
+    height: calc(100vh - 6px);
+    padding: 2px;
+    position: absolute;
+    right: 0;
+}
+
+header {
+    width: calc(100% - 125px);
+    height: 50px;
+    padding-left: 125px;
+    margin-bottom: 2px;
+    font-size: 1.4rem;
+    line-height: 50px;
+    background-color: var(--header-bg);
+    position: relative;
+}
+
+header .operation {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+}
+
+header input {
+    width: 160px;
+    height: calc(100% - 16px);
+    border: none;
+    margin: 0 35px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+header img {
+    width: 25px;
+    height: 25px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+header img:last-child {
+    margin-left: 10px;
+    margin-right: 25px;
+}
+
+header span {
+    width: 94px;
+    height: 33px;
+    background-color: white;
+    border: 1px solid white;
+    position: relative;
+    cursor: pointer;
+}
+
+header span div {
+    width: 30px;
+    height: 30px;
+    background-color: var(--header-bg);
+    border-radius: 50%;
+    border: 1px solid var(--header-bg);
+    position: absolute;
+    margin: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+@keyframes lookByMonth {
+    0% {
+        left: 61px;
+        transform: rotateZ(180deg);
+    }
+
+    100% {
+        left: 0;
+        transform: rotateZ(0deg);
+    }
+}
+
+@keyframes lookByWeek {
+    0% {
+        left: 0;
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        left: 61px;
+        transform: rotateZ(180deg);
+    }
+}
+
+main {
+    width: 100%;
+    height: calc(100% - 52px);
+}
+
+#manager {
+    top: 0;
+}
+
+#manager main {
+    display: flex;
+}
+
+#manager main div {
+    width: calc(100% / 2 - 5px);
+}
+
+#manager main div:nth-of-type(2) {
+    margin-left: 10px;
+}
+
+#manager .sec-title {
+    width: calc(100% - 30px);
+}
+
+ul {
+    width: 100%;
+    height: calc(100% - 30px);
+    overflow: scroll;
+}
+
+#manager ul {
+    height: calc(100% - 67px);
+}
+
+ul li {
+    width: calc(100% - 15px);
+    padding: 5px 0;
+    padding-left: 10px;
+    margin: 3px auto;
+    border-left: 3px solid var(--header-bg);
+    border-top: 1px solid var(--header-bg);
+    border-right: 1px solid var(--header-bg);
+    border-bottom: 1px solid var(--header-bg);
+    position: relative;
+}
+
+ul li *::selection {
+    background-color: white;
+}
+
+ul li p {
+    width: 90%;
+    overflow: hidden;
+}
+
+ul li img {
+    width: 15px;
+    height: 15px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+ul li img:last-child {
+    margin: 0 10px;
+}
+
+ul li div {
+    display: inline;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
+}
+
+#calender {
+    top: 100vh;
+}
+
+.day-container {
+    width: calc(100% - 10px);
+    height: 20px;
+    padding: 10px 0;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--nav-bg);
+}
+
+.day {
+    width: calc(100% / 7);
+    text-align: start;
+    font-size: 1.1rem;
+}
+
+.calender {
+    width: calc(100% - 20px);
+    height: calc(100% - 60px);
+    padding: 10px;
+    overflow-y: scroll;
+}
+
+.week {
+    width: 100%;
+    height: calc(100% / 6);
+    display: flex;
+}
+
+@keyframes changeByMonth {
+    0% {
+        height: 50%;
+    }
+
+    100% {
+        height: calc(100% / 6);
+    }
+}
+
+.by-week {
+    height: 50%;
+}
+
+@keyframes changeByWeek {
+    0% {
+        height: calc(100% / 6);
+    }
+
+    100% {
+        height: 50%;
+    }
+}
+
+.date-box {
+    height: calc(100% - 10px);
+    width: calc(100% / 7 - 10px);
+    padding: 5px;
+    overflow: scroll;
+    position: relative;
+    cursor: default;
+}
+
+.hover-box {
+    transition: 0.3s;
+}
+
+.hover-box:hover {
+    background-color: var(--nav-bg);
+}
+
+.fixed-board::after {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background-color: black;
+    opacity: 0.6;
+}
+
+.homework-list-container {
+    width: 750px;
+    height: 100vh;
+    position: absolute;
+    right: -760px;
+    background-color: white;
+}
+
+@keyframes showHomeworkListContainer {
+    0% {
+        right: -760px;
+    }
+
+    100% {
+        right: 0;
+    }
+}
+
+@keyframes hiddenHomeworkListContainer {
+    0% {
+        right: 0;
+    }
+
+    100% {
+        right: -760px;
+    }
+}
+
+.back-board {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url("assets/study.jpg");
+    background-size: cover;
+    background-position: center;
+    animation: showBoard 0.3s linear;
+    z-index: 2;
+}
+
+@keyframes showBoard {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes hiddenBoard {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.back-board * {
+    border: 1px solid black;
+    display: block;
+    margin: 15px auto;
+    width: 450px;
+    height: 27px;
+}
+
+.back-board input,
+.back-board select {
+    padding-left: 10px;
+    background-color: white;
+}
+
+.back-board select {
+    border-left: 5px solid black;
+    width: 460px;
+}
+
+.back-board textarea {
+    height: 250px;
+    padding: 5px;
+    background-color: white;
+}
+
+.back-board div {
+    border: none;
+    display: flex;
+    width: 470px;
+}
+
+.back-board button {
+    background-color: white;
+    margin: 0 5px;
+    margin-top: 20px;
+    width: 230px;
+    cursor: pointer;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.back-board button:last-child {
+    background-color: var(--base-fc);
+    color: white;
+    border: 1px solid white;
+}
+
+.label {
+    font-size: 50%;
+    width: calc(100% - 10px);
+    padding-left: 10px;
+    margin: auto;
+    height: fit-content;
+    border: 1px solid black;
+    border-left: 3px solid black;
+    overflow-x: hidden;
+    margin: 2px 0;
+}
+
+.label-today {
+    width: 50%;
+    padding: 0;
+    text-align: center;
+    border: none;
+    background-color: var(--header-bg);
+    position: absolute;
+    top: 7px;
+    right: 5px;
+}
+
+#homework {
+    top: 200vh;
+}
+
+.homework-much {
+    height: 20px;
+    width: calc(100% - 30px);
+    text-align: end;
+    margin: 5px 0;
+}
+
+#homework-much {
+    display: inline;
+}
+
+#setting {
+    top: 300vh;
+}
+
+.sec-title {
+    font-size: 1.2rem;
+    padding: 15px;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    width: fit-content;
+    border-bottom: 1.5px solid var(--header-bg);
+}
+
+#setting .sec-title {
+    font-weight: 600;
+}
+
+.sec {
+    width: calc(100% - 30px);
+    padding: 15px;
+}
+
+.sec div {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: var(--nav-bg);
+}
+
+.sec div label {
+    padding-right: 270px;
+}
+
+.sec div button {
+    padding: 0 5px;
+}
+
+.sec div a {
+    text-decoration-line: underline;
+}

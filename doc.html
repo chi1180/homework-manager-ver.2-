@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework Manager Documentation</title>
+    <link rel="stylesheet" href="doc-style.css">
+    <link rel="shortcut icon" href="assets/icon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <a href="index.html" target="_blank">
+            <img src="assets/icon.png" alt="app image" loading="lazy">
+        </a>
+        <div>Homework Manager Documentation</div>
+    </header>
+
+    <nav>
+        <a href="#documentation-introduction">
+            <li>
+                Documentation Introduction
+            </li>
+        </a>
+        <a href="#basic-usage">
+            <li>
+                Basic Usage
+            </li>
+        </a>
+        <ul class="toggle-links">
+            <a href="#manager-section">
+                <li>
+                    Manager section
+                </li>
+            </a>
+            <a href="#calender-section">
+                <li>
+                    Calender section
+                </li>
+            </a>
+            <a href="#homework-section">
+                <li>
+                    Homework section
+                </li>
+            </a>
+            <a href="#setting-section">
+                <li>
+                    Setting section
+                </li>
+            </a>
+        </ul>
+        <a href="#use-like-app">
+            <li>
+                Use like app
+            </li>
+        </a>
+    </nav>
+
+    <main>
+        <section id="documentation-introduction">
+            <div class="title">Documentation Introduction</div>
+            <p>
+                これは Homework Manager のドキュメントであり、利用可能なすべての機能に関する詳細情報が記載されています。
+            </p>
+            <p>
+                不明な点がある場合、サポートが必要な場合、またはアプリケーションに不具合が発生した場合、下記メールアドレスまでご連絡ください。
+            </p>
+            <p>
+                改善に関するアイディアや、新しい機能の追加、デザインの変更などについても、下記メールアドレスまでご連絡ください。
+            </p>
+                <a href="mailto:CWChi1@outlook.jp?subject=To CWChi_1" target="_blank" style="font-size: smaller;">CWChi1@outlook.jp</a>
+            </p>
+
+            <div class="sec">
+                <div class="title">App web site</div>
+                <p><a href="http://cecom.starfree.jp/homework-manager(ver.2)/index.html" target="_blank">http://cecom.starfree.jp/homework-manager(ver.2)/index.html</a></p>
+            </div>
+        </section>
+
+        <section id="basic-usage">
+            <div class="title">Basic Usage</div>
+            <div class="sec">
+                <div class="title" id="manager-section">Manager section</div>
+                <img src="assets/doc/manager.png" alt="manager section image" loading="lazy">
+                <p>
+                    「今日の課題」と「直近の課題」がリストアップして表示されます。<br>
+                    「Today homework」の下に今日の課題が、「Near day homework」の下に直近の課題が表示されます。<br>
+                    課題のリストをダブルクリックすることで、課題の詳細と、課題の締め切り日を表示することができます。
+                </p>
+                <img src="assets/doc/manager-preview.png" alt="manager preview image" loading="lazy">
+            </div>
+            <div class="sec">
+                <div class="title" id="calender-section">Calender section</div>
+                <img src="assets/doc/calender.png" alt="calender section image" loading="lazy">
+                <p>
+                    作成した課題をカレンダー上で確認できます。<br>
+                    上部右端から、「翌月を表示するボタン」「先月を表示するボタン」「カレンダーで表示する月を選択する」「月で表示する」「週で表示する」というようになっています。具体的な挙動に関しては、下の画像（GIF）を参考にしてください。
+                </p>
+                <img src="assets/doc/calender-doing.gif" alt="calender doing gif">
+                <p>
+                    日付ボックスに課題が記載されている場合、日付ボックスをクリックすることで、その日の課題一覧を表示することができます。<br>
+                    表示された課題一覧から、課題の詳細の確認や、編集、削除を行うことができます。<br>
+                    日付ボックスの中で、課題がいっぱいになる場合、スクロールして課題を確認することも可能です。<br>
+                    具体的な挙動に関しては、下の画像（GIF）を参考にしてください。
+                </p>
+                <img src="assets/doc/calender-datebox-doing.gif" alt="calender date box doing">
+            </div>
+            <div class="sec">
+                <div class="title" id="homework-section">Homework section</div>
+                <img src="assets/doc/homework.png" alt="homework section image" loading="lazy">
+                <p>
+                    課題の作成、編集、削除を行うセクションです。<br>
+                    作成した全ての課題が一覧で表示されます。<br>
+                    右上に「all : 」として、作成された課題の個数が表示されます。<br>
+                    右上のプラスボタンをクリックすることにより、以下のような課題を作成する画面が表示されます。
+                </p>
+                <img src="assets/doc/editer-view.png" alt="editor view image" loading="lazy">
+                <p>
+                    年月日、課題のタイトル、課題の詳細、課題のラベルカラー（デフォルトは黒）を記入して、「add homework」ボタンをクリックして課題を作成できます。「cancel」ボタンをクリックして課題の作成をキャンセルすることもできます。<br>
+                    課題のラベルをダブルクリックして、課題の詳細、設定した年月日を確認することができます。<br>
+                    課題のラベルの右端にある「編集」と「削除」のボタンをクリックして、それぞれ課題の編集、削除を行うことができます。<br>
+                    以上の詳しい挙動については、以下の画像（GIF）を参照してください。
+                </p>
+                <img src="assets/doc/homework-doing.gif" alt="homework doing image">
+                <p>
+                    追記：<br>
+                    先々月の課題は、自動的に削除されるようになっています。
+                </p>
+            </div>
+            <div class="sec">
+                <div class="title" id="setting-section">Setting section</div>
+                <img src="assets/doc/setting.png" alt="setting section image" loading="lazy">
+                <p>
+                    Import or Export the Homework data で、作成した課題のデータをエクスポート、もしくは課題データをインポートできます。<br>
+                    Import でファイル（homework-data.json）を選択し、隣にある Import ボタンをクリックすることで課題データをインポートできます。<br>
+                    Export で Export a homework-data.json ボタンをクリックすると、現在ある課題のデータを homework-data.json というファイルでダウンロードします。
+                </p>
+                <p>
+                    Help では、このアプリについての情報が記載されています。<br>
+                    Documentation で この課題管理アプリのドキュメント（Homework Manager Documentation）ページを開きます。<br>
+                    ドキュメントのページにこの課題管理アプリについての情報が記載されています。
+                </p>
+            </div>
+        </section>
+
+        <section id="use-like-app">
+            <div class="title">Use like app</div>
+            <p>
+                この課題管理アプリには、その日の課題について通知を送るという機能が存在します。<br>
+                しかし、このアプリページをいちいち開かなくては、通知を受け取ることができません。<br>
+                <br>
+                そのため、課題についての通知を受け取るには、この課題管理アプリのwebページをデスクトップアプリとして使えるようにし、通知の許可とログイン時の起動を ON にする必要があります。<br>
+                以下に、その方法を説明します。以下のようにすることで、タスクバーへのこのアプリのピン止めと、ログイン時の起動、課題についての通知を受け取るといったことが可能になります。<br>
+            </p>
+            <p>
+                使用するブラウザ：Google Chrome<br>
+                この webアプリをデスクトップアプリのようにして使用するには、上記のブラウザが必要です。
+            </p>
+            <p>
+                1. Google Chrome で課題管理アプリ（<a href="http://cecom.starfree.jp/homework-manager(ver.2)/index.html" target="_blank">Homework Manager</a>）を開く<br>
+                <br>
+                2. 以下の画像のように、[保存と共有]、[ショートカットを作成] という順で選択し、クリックします。
+            </p>
+            <img src="assets/doc/select-option.png" alt="select option image" loading="lazy">
+            <p>
+                ポップアップが表示されるので、「ウィンドウとして開く」にチェックします。<br>
+                次のようになります。
+            </p>
+            <img src="assets/doc/check-by-window.png" alt="check by window" loading="lazy">
+            <p>
+                「作成」ボタンをクリックします。
+            </p>
+            <img src="assets/doc/ask-on-taskbar.png" alt="ask on taskbar" loading="lazy">
+            <p>
+                タスクバーにピン止めするか聞かれるので、「はい」をクリックします。
+            </p>
+            <img src="assets/doc/taskbar.png" alt="taskbar image" loading="lazy">
+            <p>
+                上の画像のように、タスクバーにピン止めされたことが確認できれば第一段階が完了です。<br>
+                <br>
+                ここから、このアプリに通知の許可とログイン時の起動を ON にしていきます。
+            </p>
+            <p>
+                タスクバーにピン止めしたアプリを開いて、以下の画像のように、[右上の三点]、[アプリ情報]と選択し、クリックします。
+            </p>
+            <img src="assets/doc/app-info.png" alt="app information image" loading="lazy">
+            <p>
+                「設定」をクリックします。
+            </p>
+            <img src="assets/doc/app-setting.png" alt="app setting image" loading="lazy">
+            <p>
+                次のようなページが開かれれば良いです。
+            </p>
+            <img src="assets/doc/app-setting-view.png" alt="app setting view image" loading="lazy">
+            <p>
+                初めて開いた際には、「ログイン時にアプリを開く」と、「通知」が OFF の状態になっているはずですから、それらをクリックして ON にします。
+            </p>
+            <img src="assets/doc/checked-app-setting.png" alt="checked app setting image" loading="lazy">
+            <p>
+                上の画像のように、三つともすべて ON にしておく状態がベストでしょう。<br>
+                <br>
+                以上の設定により、この課題管理アプリをあなたのタスクバーにピン止めし、ログイン時に起動するようにし、通知を許可することができました！
+            </p>
+        </section>
+    </main>
+</body>
+</html>
+

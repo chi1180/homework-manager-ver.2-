@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/icon.ico" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.12/push.min.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="#manager">
+            MANAGER
+        </a>
+        <a href="#calender">
+            CALENDER
+        </a>
+        <a href="#homework">
+            HOMEWORK
+        </a>
+        <a href="#setting">
+            SETTING
+        </a>
+    </nav>
+
+    <section id="manager">
+        <header>
+            <div class="title">Manager</div>
+        </header>
+        <main>
+            <div>
+                <div class="sec-title">Today homework</div>
+                <ul id="today-homework-container"></ul>
+            </div>
+            <div>
+                <div class="sec-title">Near day homework</div>
+                <ul id="near-homework-container"></ul>
+            </div>
+        </main>
+    </section>
+
+    <section id="calender">
+        <header>
+            <div class="title">Calender</div>
+            <div class="operation">
+                <span id="toggle-button">
+                    <div id="viewBtn">M</div>
+                </span>
+                <input type="date" class="calenderinput" id="calenderInput">
+                <img src="assets/back.png" alt="month to back" onclick="changeMonth(-1)">
+                <img src="assets/fd.png" alt="month to followed" onclick="changeMonth(1)">
+            </div>
+        </header>
+        <main>
+            <div class="day-container">
+                <div class="day">Sun</div>
+                <div class="day">Mon</div>
+                <div class="day">Tue</div>
+                <div class="day">Wed</div>
+                <div class="day">Thu</div>
+                <div class="day">Fri</div>
+                <div class="day">Sat</div>
+            </div>
+            <div class="calender"></div>
+        </main>
+    </section>
+
+    <ul class="homework-list-container"></ul>
+
+    <section id="homework">
+        <header>
+            <div class="title">Homework</div>
+            <div class="operation">
+                <img src="assets/add.png" alt="add homework" onclick="addHomework()">
+            </div>
+        </header>
+        <main>
+            <div class="homework-much">all&nbsp;&#58;&nbsp;<div id="homework-much">0</div></div>
+            <ul></ul>
+        </main>
+    </section>
+
+    <section id="setting">
+        <header>
+            <div class="title">Setting</div>
+        </header>
+        <main>
+            <div class="sec-title">Import or export the Homework data</div>
+            <div class="sec">
+                <div>
+                    <label>Import</label>
+                    <input type="file" accept=".json" id="importFileInput">
+                    <button onclick="importHomeworkDataCsvFile()">Import</button>
+                </div>
+                <div>
+                    <label>Export</label>
+                    <button onclick="exportHomeworkDataCsvFile()">Export a homework-data.json</button>
+                </div>
+            </div>
+
+            <div class="sec-title">Help</div>
+            <div class="sec">
+                <div>
+                    <label>Documentation</label>
+                    <a href="doc.html" target="_blank"><em>Documentation link</em></a>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
