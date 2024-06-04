@@ -396,6 +396,7 @@ function addHomework(date, title, about, color) {
                 hiddenHomeworkEditor();
                 upHomeworkData();
                 createCalender();
+                createCalender(); // set today homework list and near day homework list by get data from local-storage
 
                 // checking to we show list container in calender section
                 const listContainerLists = document.querySelector(".homework-list-container").querySelectorAll("li");
