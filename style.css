@@ -46,6 +46,8 @@ nav {
 nav a {
     display: block;
     width: calc(100% - 29px);
+    height: 27px;
+    line-height: 27px;
     padding: 5px 10px;
     margin: 25px 0;
     background-color: white;
