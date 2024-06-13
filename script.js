@@ -679,21 +679,16 @@ function isMoreLastMonthData(homework) {
 
 // --- code to push message working
 
-Push.Permission.request();
+if ( ! Push.Permission.has()) {
+    Push.Permission.request();
+}
 
 // get and save last login in date
 
 const lastLoginDate = JSON.parse(localStorage.getItem("last-login-at"));
-let toMonth = "";
-if ((new Date().getMonth() + 1).toString().length !== 2) {
-    toMonth = "0" + (new Date().getMonth() + 1).toString();
-}
-let toDate = "";
-if (new Date().getDate().toString().length !== 2) {
-    toDate = "0" + new Date().getDate().toString();
-}
+const today = new Date();
+const formattedToDate = today.getFullYear().toString() + (today.getMonth() + 1).toString().padStart(2, "0") + today.getDate().toString().padStart(2, "0");
 
-const formattedToDate = new Date().getFullYear().toString() + toMonth + toDate;
 let homeworks = "";
 JSON.parse(localStorage.getItem("homework_data")).forEach((homework) => {
     if (homework.date.split("-").join("") === formattedToDate) {
@@ -704,7 +699,7 @@ if (lastLoginDate && lastLoginDate.date < parseInt(formattedToDate) && Push.Perm
     Push.create("Today's homeworks", {
         body: homeworks,
         icon: "assets/icon.ico",
-        timeout: 1000 * 60 * 3,
+        timeout: null,
         onClick: function () {
             window.focus(),
             this.close()
@@ -712,5 +707,5 @@ if (lastLoginDate && lastLoginDate.date < parseInt(formattedToDate) && Push.Perm
     });
 }
 
-localStorage.setItem("last-login-at", JSON.stringify({ date: parseInt(new Date().getFullYear().toString() + toMonth + toDate) }));
+localStorage.setItem("last-login-at", JSON.stringify({ date: parseInt(formattedToDate) }));
 
