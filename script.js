@@ -574,36 +574,6 @@ function saveHomework() {
     localStorage.setItem("homework_data", JSON.stringify(homework_data));
 }
 
-function changeTheme() {
-    document.getElementById("theme").querySelectorAll("input").forEach((inp) => {
-        if (inp.type === "radio" && inp.checked) {
-            localStorage.setItem("theme-color", JSON.stringify({ color: inp.id }));
-            setTheme(inp.id);
-        }
-    });
-}
-
-function setTheme(color) {
-    document.querySelector("nav").style.borderColor = color;
-    document.querySelector("nav").querySelectorAll("li").forEach((li) => {
-        li.style.borderColor = color;
-    });
-    document.querySelectorAll("header").forEach((header) => {
-        header.style.borderColor = color;
-        header.querySelectorAll("img").forEach((img) => {
-            img.style.boxShadow = "1px 1px 1px " + color + ", -1px -1px 1px " + color;
-        });
-    });
-    document.querySelectorAll(".sec-title").forEach((elem) => {
-        elem.style.borderColor = color;
-    });
-    toggleButton.style.border = "1px solid " + color;
-    btn.style.backgroundColor = color;
-    btn.style.border = "1px solid " + color;
-    todayLabelColor = color;
-    createCalender();
-}
-
 function exportHomeworkDataCsvFile() {
     const homeworks = document.getElementById("homework").querySelector("main").querySelectorAll("li");
     let homework_data = [];
@@ -634,11 +604,31 @@ function importHomeworkDataCsvFile() {
     if (input.files[0].type === "application/json") {
         const reader = new FileReader();
         reader.onload = () => {
-            localStorage.setItem("homework_data", reader.result);
+            localStorage.setItem("homework_data", JSON.stringify(checkDeferentHomeworkData(JSON.parse(localStorage.getItem("homework_data")), JSON.parse(reader.result))));
             window.location.reload();
         }
         reader.readAsText(input.files[0]);
     }
+}
+
+function checkDeferentHomeworkData(mine, current) {
+    mine.forEach((mine_data) => {
+        let count = 1;
+        current.forEach((current_data) => {
+            if (mine_data.date === current_data.date && mine_data.title === current_data.title) {
+                count ++;
+                current_data.title += " (" + count.toString() + ")";
+            }
+        });
+    });
+    for (let i = 0; i < current.length; i ++) {
+        console.log(current[i]);
+    }
+    current.forEach((current_data) => {
+        mine.push(current_data);
+    });
+
+    return mine;
 }
 
 function deleteMoreLastMonthData() {
@@ -679,7 +669,7 @@ function isMoreLastMonthData(homework) {
 
 // --- code to push message working
 
-if ( ! Push.Permission.has()) {
+if (!Push.Permission.has()) {
     Push.Permission.request();
 }
 
@@ -702,7 +692,7 @@ if (lastLoginDate && lastLoginDate.date < parseInt(formattedToDate) && Push.Perm
         timeout: null,
         onClick: function () {
             window.focus(),
-            this.close()
+                this.close()
         }
     });
 }

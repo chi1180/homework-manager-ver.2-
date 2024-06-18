@@ -130,6 +130,7 @@ header input {
     width: 160px;
     height: calc(100% - 16px);
     border: none;
+    border-radius: 6px;
     margin: 0 35px;
     text-align: center;
     font-size: 1rem;
@@ -151,6 +152,7 @@ header span {
     width: 94px;
     height: 33px;
     background-color: white;
+    border-radius: 33px;
     border: 1px solid white;
     position: relative;
     cursor: pointer;
@@ -234,6 +236,7 @@ ul li {
     padding: 5px 0;
     padding-left: 10px;
     margin: 3px auto;
+    border-radius: 6px;
     border-left: 3px solid var(--header-bg);
     border-top: 1px solid var(--header-bg);
     border-right: 1px solid var(--header-bg);
@@ -257,7 +260,7 @@ ul li img {
     cursor: pointer;
 }
 
-ul li img:last-child {
+ul li img:nth-of-type(2) {
     margin: 0 10px;
 }
 
@@ -359,8 +362,9 @@ ul li div {
 }
 
 .homework-list-container {
-    width: 750px;
-    height: 100vh;
+    width: 740px;
+    height: calc(100vh - 10px);
+    padding: 5px;
     position: absolute;
     right: -760px;
     background-color: white;
@@ -425,6 +429,7 @@ ul li div {
     margin: 15px auto;
     width: 450px;
     height: 27px;
+    border-radius: 6px;
 }
 
 .back-board input,
@@ -457,7 +462,6 @@ ul li div {
     width: 230px;
     cursor: pointer;
     height: 30px;
-    border-radius: 5px;
 }
 
 .back-board button:last-child {
@@ -476,6 +480,7 @@ ul li div {
     border-left: 3px solid black;
     overflow-x: hidden;
     margin: 2px 0;
+    border-radius: 4px;
 }
 
 .label-today {
